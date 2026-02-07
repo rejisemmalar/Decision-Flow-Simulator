@@ -6,8 +6,7 @@ function TreeNode({ node, onAdd, onEdit, onDelete }) {
   const [showAdd, setShowAdd] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
-  const [showDelete, setShowDelete] = useState(false);
-  const [deleteTarget, setDeleteTarget] = useState(null);
+ 
 
   return (
     <div className="tree-node">
