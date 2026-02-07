@@ -1,0 +1,384 @@
+/* ==============Add Decision Modal box=========================== */
+.modal-3d {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.75),
+    rgba(2, 6, 23, 0.75)
+  );
+  color: #e5e7eb !important;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 18px;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  transform-style: preserve-3d;
+  animation: modalPop3d 0.35s ease-out;
+}
+
+@keyframes modalPop3d {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9) rotateX(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+  }
+}
+
+.modal-3d .modal-title {
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.modal-3d::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #5865f2, #ec4899);
+  opacity: 0.15;
+  filter: blur(18px);
+  z-index: -1;
+}
+
+/* Remove horizontal lines in the modal */
+.modal-3d .modal-header,
+.modal-3d .modal-footer {
+  border-bottom: none !important;
+  border-top: none !important;
+}
+
+/* ===============footer=================== */
+.modal-3d .modal-footer{
+    justify-content: center;
+    gap: 12px;
+}
+
+.modal-3d .btn-outline-secondary {
+  color: #cbd5f5;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 8px 18px;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.modal-3d .btn-outline-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.modal-3d .btn-dark {
+  background: linear-gradient(135deg, rgba(88, 101, 242, 0.85), rgba(236, 72, 153, 0.85)) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 12px;
+  padding: 9px 22px;
+  font-weight: 600;
+
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.modal-3d .btn-dark:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  filter: brightness(1.05);
+}
+
+.modal-3d .btn-dark:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.45),
+    inset 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.modal-3d .btn-dark::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #5865f2, #ec4899);
+  opacity: 0.2;
+  filter: blur(10px);
+  z-index: -1;
+}
+.modal-3d .btn-dark { position: relative; }
+
+/* =======close icon======== */
+.modal-3d .btn-close {
+  filter: invert(1); /* make X white on dark bg */
+  opacity: 0.75;
+
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 50%;
+  padding: 8px;
+
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.modal-3d .btn-close:hover {
+  opacity: 1;
+  transform: translateY(-1px) scale(1.05);
+  background-color: rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.modal-3d .btn-close:active {
+  transform: translateY(1px) scale(0.95);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.45),
+    inset 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.modal-3d .btn-close::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5865f2, #ec4899);
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 0.15s ease;
+  z-index: -1;
+}
+
+.modal-3d .btn-close:hover::after {
+  opacity: 0.4;
+}
+
+.modal-3d .btn-close {
+  position: relative;
+}
+
+/* ==================================================================== */
+
+/* Decision Card */
+.decision-card {
+  position: relative;
+  cursor: pointer;
+
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.75),
+    rgba(2, 6, 23, 0.75)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px 18px;
+  color: #e5e7eb;
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 110px;
+}
+
+.decision-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.decision-card h5 {
+  color: #f8fafc;
+}
+
+.decision-card p {
+  color: #94a3b8 !important;
+}
+
+/* delete icon */
+.card-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+}
+
+.icon-btn {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 6px 8px;
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.icon-btn i {
+  color: #f87171; /* red trash */
+  font-size: 16px;
+}
+
+.icon-btn:hover {
+  transform: translateY(-1px) scale(1.05);
+  background: rgba(248, 113, 113, 0.15);
+  box-shadow:
+    0 10px 24px rgba(248, 113, 113, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* =====================================Delete Confirmations======================== */
+
+/* Overlay background */
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* Glass Card */
+.dialog-card {
+  min-width: 320px;
+  max-width: 420px;
+  padding: 20px 22px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.75),
+    rgba(2, 6, 23, 0.85)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  transform: perspective(1000px) rotateX(6deg) scale(0.95);
+  animation: dialogPop 0.25s ease forwards;
+}
+
+/* Title */
+.dialog-title {
+  color: #f87171;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* Body text */
+.dialog-card p {
+  color: #cbd5f5;
+  margin-bottom: 18px;
+}
+
+/* Actions */
+.dialog-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Base button */
+.dialog-btn {
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: #e5e7eb !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.dialog-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* Cancel button */
+.dialog-btn.cancel {
+  color: #cbd5f5;
+}
+
+.dialog-btn.cancel:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Danger button */
+.dialog-btn.danger {
+  background: linear-gradient(
+    135deg,
+    rgba(248, 113, 113, 0.85),
+    rgba(239, 68, 68, 0.85)
+  );
+  color: #fff;
+  border: none;
+}
+
+.dialog-btn.danger:hover {
+  box-shadow:
+    0 10px 22px rgba(239, 68, 68, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.text-muted {
+  color: white !important;
+}
+
+/* Pop animation */
+@keyframes dialogPop {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(12deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg) scale(1);
+  }
+}
