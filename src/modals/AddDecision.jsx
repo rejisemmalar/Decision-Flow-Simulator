@@ -12,7 +12,7 @@ function AddDecision({ show, onClose, onSave, defaultValue = "" }) {
     bsModal.current = new Modal(modalRef.current);
 
     modalRef.current.addEventListener("hidden.bs.modal", onClose);
-  }, []);
+  }, [onClose]);
 
   useEffect(() => {
     if (!bsModal.current) return;
