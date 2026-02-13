@@ -5,10 +5,10 @@ function DeleteConfirmation({ show, title, onCancel, onConfirm, variant }) {
 
   return (
     <div className="dialog-overlay">
-      <div className={`dialog-card ${variant === "danger" ? "danger-glass" : ""}`}>
+      <div className={`dialog-card ${variant === "danger" ? "danger-glass" : ""}`} style={{color:"white"}}>
         <h5 className="dialog-title text-danger">Delete Decision</h5>
 
-        <p className="text-muted">
+        <p className="text-muted" >
           Are you sure you want to delete <b>{title}</b>?
         </p>
 

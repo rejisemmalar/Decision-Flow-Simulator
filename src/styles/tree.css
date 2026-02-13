@@ -1,10 +1,17 @@
+body {
+    overflow: hidden;
+}
+
 .flow-container {
     min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     background: linear-gradient(135deg,
             #ffe4b5,
             #afeeee);
     backdrop-filter: blur(16px);
-
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     padding: 24px;
@@ -14,23 +21,29 @@
 
 /*  */
 .tree-canvas {
+    flex: 1;
     display: flex;
-    justify-content: center;
-    padding: 40px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 30px;
     overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
 }
+
 
 /* tree Layout */
 .tree-node {
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     align-items: center;
     position: relative;
 }
 
 .node-card {
     position: relative;
-    padding: 16px 56px 16px 16px;
+    padding: 16px 16px 16px 16px;
     border-radius: 14px;
     /* background: #ffffff; */
     width: 180px;
@@ -42,7 +55,6 @@
     min-width: 120px;
     text-align: center;
     font-weight: 600;
-
     white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -70,15 +82,12 @@
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.35);
     background: rgba(255, 255, 255, 0.85);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 0;
     cursor: pointer;
     line-height: 1;
-
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
     transition: all 0.18s ease;
 
@@ -151,6 +160,7 @@
     gap: 50px;
     position: relative;
     padding-top: 30px;
+    flex-wrap: nowrap;
 }
 
 /* vertical line from parent */
@@ -277,6 +287,10 @@
     filter: brightness(1.1);
 }
 
+.text-muted{
+    color: white !important;
+}
+
 /* EDIT (Blue Glass) */
 .dialog-card.edit {
     background: linear-gradient(135deg, rgba(96, 165, 250, 0.28), rgba(59, 130, 246, 0.18));
@@ -363,10 +377,61 @@
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
     background: linear-gradient(135deg,
             #0e309f,
-             #091446);
+            #091446);
     color: white;
 }
 
 .back-btn-glass:active {
     transform: translateY(0);
 }
+
+/* =================Responsive=================== */
+@media (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+}
+
+/* tab */
+@media (max-width: 1024px) {
+    .node-card {
+        width: 160px;
+        max-width: 160px;
+        font-size: 14px;
+    }
+
+    .node-children {
+        gap: 32px;
+    }
+
+    .tree-canvas {
+        padding: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .tree-canvas {
+        padding: 12px;
+    }
+
+    .node-card {
+        width: 140px;
+        max-width: 140px;
+        padding: 12px;
+        font-size: 13px;
+        line-height: 1.35;
+    }
+
+    .node-children {
+        gap: 20px;
+    }
+
+    .flow-container {
+        height: auto;
+        min-height: 100vh;
+        border-radius: 0;
+        padding: 16px;
+    }
+}
+

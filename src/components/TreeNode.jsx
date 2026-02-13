@@ -11,7 +11,7 @@ function TreeNode({ node, onAdd, onEdit, onDelete }) {
   return (
     <div className="tree-node">
       <div className={`node-card ${node.type}`}>
-        <span>{node.text}</span>
+        <span className="node-text">{node.text}</span>
 
         <div className="node-actions">
           {/* Add */}
